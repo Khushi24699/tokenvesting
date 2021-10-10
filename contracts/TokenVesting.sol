@@ -122,16 +122,16 @@ contract TokenVesting is Ownable {
     return vestedAmount(token).sub(released[address(token)]);
   }
   
-  function vestedAmount(ERC20 token) public view returns (uint256) {
-    uint256 currentBalance = token.balanceOf(address(this));
-    uint256 totalBalance = currentBalance.add(released[address(token)]);
+  // function vestedAmount(ERC20 token) public view returns (uint256) {
+  //   uint256 currentBalance = token.balanceOf(address(this));
+  //   uint256 totalBalance = currentBalance.add(released[address(token)]);
 
-    // if (block.timestamp < cliff) {
-    //   return 0;
-    // } else if (block.timestamp >= start.add(duration) || revoked[address(token)]) {
-    //   return totalBalance;
-    // } else {
-    //   return totalBalance.mul(block.timestamp.sub(start)).div(duration);
-    // }
-  } 
+  //   // if (block.timestamp < cliff) {
+  //   //   return 0;
+  //   // } else if (block.timestamp >= start.add(duration) || revoked[address(token)]) {
+  //   //   return totalBalance;
+  //   // } else {
+  //   //   return totalBalance.mul(block.timestamp.sub(start)).div(duration);
+  //   // }
+  // } 
 }
